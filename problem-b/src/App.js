@@ -17,7 +17,7 @@ class App extends Component {
     this.setState((currentState) => {
       let petNeeded = _.find(currentState.pets, ['name', petName]);
       petNeeded.adopted = true;
-      return currentState.pets;
+      return petNeeded;
     })
   }
 
@@ -42,7 +42,7 @@ class App extends Component {
             </div> 
 
             <div id="petList" className="col-9">
-              <PetList pets={this.state.pets} whenClicked={this.adoptCallback}/>
+              <PetList pets={this.state.pets} whenClicked={this.adopt}/>
 
             </div>
           </div> 
